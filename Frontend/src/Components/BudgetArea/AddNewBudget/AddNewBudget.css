@@ -1,0 +1,203 @@
+.AddBudget {
+    min-height: calc(100vh - 140px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+}
+
+.budget-card {
+    background: linear-gradient(135deg, #3d586e, #324b64);
+    padding: 3rem;
+    border-radius: 20px;
+    border: 2px solid #8eaab4;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 800px;
+    animation: slideUp 0.5s ease-out;
+    backdrop-filter: blur(12px);
+}
+
+.budget-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.budget-header h1 {
+    font-size: 2.2rem;
+    color: #bcccce;
+    margin: 0;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.subtitle {
+    color: #8eaab4;
+    margin: 0.75rem 0 0 0;
+    font-size: 1.1rem;
+}
+
+.budget-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.date-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+}
+
+.form-group label {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #bcccce;
+    margin-left: 0.25rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.input-wrapper {
+    position: relative;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    border: 2px solid #8eaab4;
+    border-radius: 10px;
+    font-size: 1rem;
+    background: rgba(188, 204, 206, 0.1);
+    color: #bcccce;
+    transition: all 0.3s ease;
+}
+
+.input-wrapper input[type="date"] {
+    color-scheme: dark;
+    padding: 0.875rem 1rem;
+}
+
+.input-wrapper input::placeholder {
+    color: rgba(188, 204, 206, 0.5);
+}
+
+.input-wrapper input:focus {
+    outline: none;
+    border-color: #bcccce;
+    background: rgba(188, 204, 206, 0.15);
+    box-shadow: 0 0 15px rgba(142, 170, 180, 0.3);
+}
+
+.error {
+    border-color: #ff6b6b !important;
+    background: rgba(255, 107, 107, 0.1) !important;
+}
+
+.error-icon {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #ff6b6b;
+    font-weight: bold;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: rgba(255, 107, 107, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.9rem;
+}
+
+.error-message {
+    color: #ff6b6b;
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+    margin-left: 0.25rem;
+    animation: slideDown 0.3s ease-out;
+}
+
+.submit-button {
+    width: 100%;
+    padding: 1.125rem;
+    background: linear-gradient(135deg, #456378, #3a5470);
+    color: #bcccce;
+    border: 2px solid #8eaab4;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    margin-top: 1rem;
+}
+
+.submit-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(142, 170, 180, 0.3);
+    background: linear-gradient(135deg, #4d6d85, #405c7d);
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 768px) {
+    .budget-card {
+        padding: 2.5rem;
+        margin: 1rem;
+    }
+
+    .date-group {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .budget-header h1 {
+        font-size: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .AddBudget {
+        padding: 1rem;
+    }
+
+    .budget-card {
+        padding: 2rem;
+        margin: 0;
+    }
+
+    .input-wrapper input {
+        padding: 0.875rem 1rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+}

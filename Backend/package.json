@@ -1,0 +1,29 @@
+{
+    "name": "backend",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "start": "nodemon --exec ts-node src/app.ts --quiet"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "description": "",
+    "devDependencies": {
+        "@types/cors": "^2.8.17",
+        "@types/express": "^5.0.0",
+        "@types/jwt-decode": "^2.2.1",
+        "@types/node": "^22.7.4",
+        "nodemon": "^3.1.7",
+        "ts-node": "^10.9.2"
+    },
+    "dependencies": {
+        "@joi/date": "^2.1.1",
+        "cors": "^2.8.5",
+        "express": "^4.21.0",
+        "joi": "^17.13.3",
+        "jsonwebtoken": "^9.0.2",
+        "mysql2": "^3.11.3",
+        "striptags": "^3.2.0"
+    }
+}

@@ -1,0 +1,266 @@
+/* .Menu {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    padding: 0.5rem 2rem;
+    background-color: #f8f9fa; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05); 
+}
+
+.Menu > div {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.Menu span {
+    font-size: 1rem;
+    color: #333;
+    margin: 0;
+}
+
+.Menu a {
+    margin: 0 1rem;
+    text-decoration: none;
+    color: #007BFF; 
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.Menu a:hover {
+    color: #0056b3; 
+}
+
+.LogoutButton {
+    background-color: #007BFF;
+    color: white;
+    padding: 0.5rem 1rem;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.LogoutButton:hover {
+    background-color: #0056b3;
+} */
+
+
+.Menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 1.5rem;
+    position: relative;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+    margin-left: 2rem;
+}
+
+.nav-links a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 0;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: linear-gradient(to right, white, rgba(255, 255, 255, 0.7));
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: right;
+}
+
+.nav-links a:hover:after,
+.nav-links a.active:after {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: white;
+}
+
+.user-section {
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.auth-buttons {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.auth-link {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.auth-link:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to right, transparent, white, transparent);
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+.auth-link:hover:after {
+    transform: scaleX(1);
+}
+
+.register-button {
+    background: rgba(255, 255, 255, 0.95) !important;
+    color: #0066cc !important;
+    text-transform: none !important;
+    font-weight: 600 !important;
+    padding: 0.6rem 1.75rem !important;
+    border-radius: 25px !important;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+    transition: all 0.3s ease !important;
+}
+
+.register-button:hover {
+    background: white !important;
+    transform: translateY(-1px) !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15) !important;
+}
+
+.user-menu {
+    display: flex;
+    align-items: center;
+    gap: 1.75rem;
+}
+
+.add-partner-button {
+    color: white !important;
+    border: 2px solid rgba(255, 255, 255, 0.5) !important;
+    text-transform: none !important;
+    padding: 0.5rem 1.5rem !important;
+    border-radius: 25px !important;
+    font-weight: 500 !important;
+    transition: all 0.3s ease !important;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.1)) !important;
+}
+
+.add-partner-button:hover {
+    border-color: white !important;
+    background: linear-gradient(to right, transparent, rgba(255, 255, 255, 0.2)) !important;
+    transform: translateY(-1px) !important;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.25rem;
+    border-radius: 30px;
+    backdrop-filter: blur(10px);
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+}
+
+.user-profile:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+.avatar {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.1));
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.user-profile:hover .avatar {
+    border-color: rgba(255, 255, 255, 0.5);
+    transform: scale(1.05);
+}
+
+/* Logout Button Styling */
+:global(.LogoutButton) {
+    background: none !important;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+    color: white !important;
+    padding: 0.5rem 1.25rem !important;
+    border-radius: 25px !important;
+    font-weight: 500 !important;
+    transition: all 0.3s ease !important;
+    margin-right: 0.5rem !important;
+}
+
+:global(.LogoutButton:hover) {
+    border-color: rgba(255, 255, 255, 0.8) !important;
+    background: rgba(255, 255, 255, 0.1) !important;
+    transform: translateY(-1px) !important;
+}
+
+/* Add subtle animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.Menu {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Add responsive design */
+@media (max-width: 768px) {
+    .Menu {
+        padding: 0 1rem;
+    }
+    
+    .nav-links {
+        gap: 1.5rem;
+        margin-left: 1rem;
+    }
+    
+    .user-menu {
+        gap: 1rem;
+    }
+    
+    .auth-buttons {
+        gap: 0.75rem;
+    }
+}
